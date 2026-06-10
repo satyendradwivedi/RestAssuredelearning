@@ -1,0 +1,41 @@
+2026-06-08 18:26:01 [main] INFO  com.api.listeners.TestListener - Test Started: login
+2026-06-08 18:26:01 [main] INFO  com.api.Test.LoginTest - Starting login test
+2026-06-08 18:26:02 [main] INFO  com.api.Test.LoginTest - Login request created with email: test1780724470140@yopmail.com
+2026-06-08 18:26:05 [main] INFO  com.api.filters.LoggingFilters - Base URI:https://iamguru-memberapi-stage.azurewebsites.net/api/Member/
+2026-06-08 18:26:05 [main] INFO  com.api.filters.LoggingFilters - Request Header:Accept=*/*
+Content-Type=application/json
+2026-06-08 18:26:05 [main] INFO  com.api.filters.LoggingFilters - Request payload:{"emailAddress":"test1780724470140@yopmail.com","password":"kJldFFfJ8El5zIaBztIXwA=="}
+2026-06-08 18:26:10 [main] INFO  com.api.filters.LoggingFilters - Status Code:200
+2026-06-08 18:26:10 [main] INFO  com.api.filters.LoggingFilters - Response Headers:Content-Type=application/json; charset=utf-8
+Date=Mon, 08 Jun 2026 12:56:09 GMT
+Server=Microsoft-IIS/10.0
+Content-Encoding=gzip
+Set-Cookie=ARRAffinity=8a34499a015e16d75fdbfc946d993a022ff86d2dff2be0059e451dae9541d94b;Path=/;HttpOnly;Secure;Domain=iamguru-memberapi-stage.azurewebsites.net
+Set-Cookie=ARRAffinitySameSite=8a34499a015e16d75fdbfc946d993a022ff86d2dff2be0059e451dae9541d94b;Path=/;HttpOnly;SameSite=None;Secure;Domain=iamguru-memberapi-stage.azurewebsites.net
+Transfer-Encoding=chunked
+Vary=Accept-Encoding
+Request-Context=appId=cid-v1:67eff796-bc5e-4fe2-a69a-ca28d6d0b98a
+X-Powered-By=ASP.NET
+2026-06-08 18:26:10 [main] INFO  com.api.filters.LoggingFilters - Response Body:{"response":{"code":"200","msg":"Success"},"result":{"memberId":0,"uuid":"c9fff785-ebb8-4671-b1a7-94054898bb5e","firstName":"Denny","lastName":"Yundt","isEmailVerified":false,"countryId":1,"phoneNumber":"7775080808","emailAddress":"test1780724470140@yopmail.com","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjOWZmZjc4NS1lYmI4LTQ2NzEtYjFhNy05NDA1NDg5OGJiNWUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJMZWFybmVyIiwiSXNBZG1pblJvbGUiOiJmYWxzZSIsImp0aSI6ImQ4ZmU2MDMzLWE5YjgtNGFmMS1hMDQyLTMzYTUzZGQ2NGNhMCIsImV4cCI6MTc4MDkyNjM2OSwiaXNzIjoiWW91ckFwcElzc3VlciIsImF1ZCI6IllvdXJBcHBBdWRpZW5jZSJ9.yyDo1JdYFUGXZcap_uEJoTgFc3rPeNEeD9w54BjULps","message":"Email verification pending.","isCreator":false,"profileCompletionYN":"N","profileCompletionStatus":1,"isRequiredDataPointCompleted":"Y","timeZone":null,"refreshToken":"S/ijemvh7xs61WTiuLBN7jrlMSM9kkd790OiIQ0rVgg8f75tW/ihTheHZjiejzdQDBq0+5YSApmXp+4ltB1HRA==","modernTwinToken":null}}
+2026-06-08 18:26:10 [main] INFO  com.api.Test.LoginTest - Login response received with status code: 200
+2026-06-08 18:26:11 [main] INFO  com.api.Test.LoginTest - User logged in successfully - Email: test1780724470140@yopmail.com, UUID: c9fff785-ebb8-4671-b1a7-94054898bb5e
+2026-06-08 18:26:11 [main] INFO  com.api.Test.LoginTest - Login test completed successfully
+2026-06-08 18:26:11 [main] INFO  com.api.listeners.TestListener - Test Passed: login
+2026-06-08 18:27:34 [main] INFO  com.api.listeners.TestListener - Test Started: signUp
+2026-06-08 18:27:35 [main] INFO  com.api.filters.LoggingFilters - Base URI:https://iamguru-memberapi-stage.azurewebsites.net/api/Member/
+2026-06-08 18:27:35 [main] INFO  com.api.filters.LoggingFilters - Request Header:Accept=*/*
+Content-Type=application/json
+2026-06-08 18:27:35 [main] INFO  com.api.filters.LoggingFilters - Request payload:{"firstName":"Rosamond","lastName":"Lockman","password":"kJldFFfJ8El5zIaBztIXwA==","phoneNumber":"3955224565","emailAddress":"test1780923454042@yopmail.com","dateOfBirth":"2000-06-03T11:06:51.478Z","joinDate":"2026-06-03T11:06:51.478Z","countryId":1,"inviteCode":null,"name":"Anthony Abernathy","cardNumber":"4242424242424242","expiryDate":"0227","cvc":"123","tcvalidated":true}
+2026-06-08 18:27:39 [main] INFO  com.api.filters.LoggingFilters - Status Code:200
+2026-06-08 18:27:39 [main] INFO  com.api.filters.LoggingFilters - Response Headers:Content-Type=application/json; charset=utf-8
+Date=Mon, 08 Jun 2026 12:57:37 GMT
+Server=Microsoft-IIS/10.0
+Content-Encoding=gzip
+Set-Cookie=ARRAffinity=8a34499a015e16d75fdbfc946d993a022ff86d2dff2be0059e451dae9541d94b;Path=/;HttpOnly;Secure;Domain=iamguru-memberapi-stage.azurewebsites.net
+Set-Cookie=ARRAffinitySameSite=8a34499a015e16d75fdbfc946d993a022ff86d2dff2be0059e451dae9541d94b;Path=/;HttpOnly;SameSite=None;Secure;Domain=iamguru-memberapi-stage.azurewebsites.net
+Transfer-Encoding=chunked
+Vary=Accept-Encoding
+Request-Context=appId=cid-v1:67eff796-bc5e-4fe2-a69a-ca28d6d0b98a
+X-Powered-By=ASP.NET
+2026-06-08 18:27:39 [main] INFO  com.api.filters.LoggingFilters - Response Body:{"response":{"code":"200","msg":"Success"},"result":{"memberId":0,"uuid":"005b0232-29a5-4ec7-b16e-73a1bdd5295c","firstName":"Rosamond","lastName":"Lockman","isEmailVerified":false,"countryId":1,"phoneNumber":"3955224565","emailAddress":"test1780923454042@yopmail.com","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMDViMDIzMi0yOWE1LTRlYzctYjE2ZS03M2ExYmRkNTI5NWMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJMZWFybmVyIiwiSXNBZG1pblJvbGUiOiJmYWxzZSIsImp0aSI6IjViNTBhODk2LThiNGEtNDAyYy05MGIyLTRmNTUxNTdhOTdmNSIsImV4cCI6MTc4MDkyNjQ1OCwiaXNzIjoiWW91ckFwcElzc3VlciIsImF1ZCI6IllvdXJBcHBBdWRpZW5jZSJ9.-obYupgFtgRhIcTEgf07kJsfLHzOmHo5c0RnAi8Ul_0","message":"Registration Sucessful","isCreator":false,"profileCompletionYN":null,"profileCompletionStatus":0,"isRequiredDataPointCompleted":null,"timeZone":null,"refreshToken":null,"modernTwinToken":""}}
+2026-06-08 18:27:40 [main] INFO  com.api.listeners.TestListener - Test Passed: signUp

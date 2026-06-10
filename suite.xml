@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="API Suite" parallel="classes" thread-count="5">
+
+    <test name="Regression API Tests">
+
+        <classes>
+            <class name="com.api.Test.LoginTest"/>
+            <class name="com.api.Test.UpdateMember"/>
+            <class name="com.api.Test.SignUpTestCase"/>
+            <class name="com.api.Test.GetMember"/>
+        </classes>
+
+    </test>
+
+</suite>

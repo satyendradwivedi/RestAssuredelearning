@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="com.api">
+    
+    <!-- Define Appenders -->
+    <Appenders>
+        
+        <!-- Console Appender -->
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout 
+                pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+        
+        <!-- File Appender -->
+        <File name="FileAppender" fileName="logs/test.log">
+            <PatternLayout 
+                pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
+        </File>
+        
+        <!-- Rolling File Appender -->
+        <RollingFile 
+            name="RollingFileAppender" 
+            fileName="logs/application.log"
+            filePattern="logs/application-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout 
+                pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+        
+    </Appenders>
+    
+    <!-- Define Loggers -->
+    <Loggers>
+        
+        <!-- Root Logger -->
+        <Root level="info">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
+            <AppenderRef ref="RollingFileAppender" />
+        </Root>
+        
+        <!-- Application Loggers -->
+        <Logger name="com.api" level="info" additivity="false">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
+            <AppenderRef ref="RollingFileAppender" />
+        </Logger>
+        
+        <!-- REST Assured Loggers -->
+        <Logger name="io.restassured" level="debug">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="FileAppender" />
+        </Logger>
+        
+    </Loggers>
+    
+</Configuration>
