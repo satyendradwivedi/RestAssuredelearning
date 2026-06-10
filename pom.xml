@@ -106,9 +106,9 @@
 
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>${suite}.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <reportsDirectory>${project.build.directory}/surefire-reports/junitreports</reportsDirectory>
+                    <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
                 </configuration>
             </plugin>
 
