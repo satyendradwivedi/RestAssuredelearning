@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-current.dtd">
+<suite name="suite" parallel="false">
+    <test name="API Tests">
+        <classes>
+            <class name="com.api.Test.LoginTest"/>
+            <class name="com.api.Test.SignUpTest"/>
+            <class name="com.api.Test.SignUpTestCase"/>
+            <class name="com.api.Test.GetMember"/>
+            <class name="com.api.Test.UpdateMember"/>
+        </classes>
+    </test>
+</suite>
