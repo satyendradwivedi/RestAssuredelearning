@@ -108,8 +108,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <reportFormat>plain</reportFormat>
-                    <reportFormat>xml</reportFormat>
+                    <reportsDirectory>${project.build.directory}/surefire-reports/junitreports</reportsDirectory>
                 </configuration>
             </plugin>
 
