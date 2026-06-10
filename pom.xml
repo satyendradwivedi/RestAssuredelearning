@@ -108,6 +108,8 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <reportFormat>plain</reportFormat>
+                    <reportFormat>xml</reportFormat>
                 </configuration>
             </plugin>
 
