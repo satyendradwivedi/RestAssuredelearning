@@ -28,8 +28,8 @@ jobs:
 
     - name: execute tests
       # Highlight-start
-      # Matches your exact pom.xml property mapping while preventing build termination on failed assertions
-      run: mvn clean test -Dsuite=suite -Dmaven.test.failure.ignore=true -X
+      # Removed -X flag completely to shrink the 5,000+ lines of noise down to clean, readable output
+      run: mvn clean test -Dsuite=suite -Dmaven.test.failure.ignore=true
       # Highlight-end
 
     - name: Upload a Build Artifact
