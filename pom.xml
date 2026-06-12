@@ -8,7 +8,6 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>RestAssuredelearning</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -19,7 +18,6 @@
     </properties>
 
     <dependencies>
-
         <!-- REST Assured -->
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -42,7 +40,6 @@
             <artifactId>log4j-api</artifactId>
             <version>2.20.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
@@ -55,68 +52,49 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.18.2</version>
         </dependency>
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
             <version>2.18.2</version>
         </dependency>
 
-        <!-- JUnit -->
+        <!-- Java Faker -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.11.0</version>
-            <scope>test</scope>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
         </dependency>
-        <dependency>
-    <groupId>com.github.javafaker</groupId>
-    <artifactId>javafaker</artifactId>
-    <version>1.0.2</version>
-</dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.11.0</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Custom Framework Dependencies -->
-       
-
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Highlight-start -->
+            <!-- RESTORED: Vital compiler mapping to process Java 17 files -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+            <!-- Highlight-end -->
 
-            <!-- Maven Compiler Plugin -->
-                        <!-- Surefire Plugin for TestNG -->
+            <!-- Surefire Plugin for TestNG -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <!-- Highlight-start -->
-                        <!-- Points back to the root folder where your file actually sits -->
                         <suiteXmlFile>${suite}.xml</suiteXmlFile>
-                        <!-- Highlight-end -->
                     </suiteXmlFiles>
+                    <includes>
+                        <include>**/com/api/Test/**/*.java</include>
+                        <include>**/com/api/test/**/*.java</include>
+                    </includes>
                 </configuration>
-                <!-- Highlight-start -->
-                <!-- Explicitly forces Maven to prioritize TestNG over your JUnit dependencies -->
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.surefire</groupId>
-                        <artifactId>surefire-testng</artifactId>
-                        <version>3.3.0</version>
-                    </dependency>
-                </dependencies>
-                <!-- Highlight-end -->
             </plugin>
-
-
         </plugins>
     </build>
 </project>
