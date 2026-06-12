@@ -27,7 +27,10 @@ jobs:
         cache: maven
 
     - name: execute tests
-      run: mvn clean test -Dsuite=suite -X
+      # Highlight-start
+      # Added explicitly defined system properties to guarantee Surefire outputs the XML file
+      run: mvn clean test -Dsuite=suite -Dmaven.test.failure.ignore=true -Dsurefire.reportNameSuffix=testng -X
+      # Highlight-end
 
     - name: Upload a Build Artifact
       if: always()
@@ -38,6 +41,9 @@ jobs:
 
     - name: Publish TestNG Report
       if: always()
-      uses: scacap/action-surefire-report@v1
+      # Highlight-start
+      # Updated to the official, actively supported v2 repository path
+      uses: ScalableCapital/action-surefire-report@v2
       with:
         report_paths: '**/target/surefire-reports/testng-results.xml'
+      # Highlight-end
