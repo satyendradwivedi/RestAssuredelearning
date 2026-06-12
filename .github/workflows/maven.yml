@@ -34,15 +34,16 @@ jobs:
         name: Logs
         path: logs/
 
-    - name: Publish Test Report
+     - name: Publish Test Report
       if: always()
       uses: dorny/test-reporter@v1
       with:
         name: TestNG Results
         # Highlight-start
-        # Searches every directory inside your workflow workspace for test xml files
-        path: '**/*.xml' 
+        # Selects only compliant JUnit XML result formats and filters out malformed summaries
+        path: '**/target/surefire-reports/junitreports/TEST-*.xml'
         # Highlight-end
         reporter: java-junit
+
 
 
