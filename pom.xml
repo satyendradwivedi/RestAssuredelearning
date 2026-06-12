@@ -66,10 +66,9 @@
         </dependency>
     </dependencies>
 
-    <build>
+        <build>
         <plugins>
-            <!-- Highlight-start -->
-            <!-- RESTORED: Vital compiler mapping to process Java 17 files -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -78,7 +77,6 @@
                     <release>17</release>
                 </configuration>
             </plugin>
-            <!-- Highlight-end -->
 
             <!-- Surefire Plugin for TestNG -->
             <plugin>
@@ -89,12 +87,19 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <includes>
-                        <include>**/com/api/Test/**/*.java</include>
-                        <include>**/com/api/test/**/*.java</include>
-                    </includes>
                 </configuration>
+                <!-- Highlight-start -->
+                <!-- Crucial: Forces Surefire to run in TestNG mode despite JUnit dependencies -->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <version>3.3.0</version>
+                    </dependency>
+                </dependencies>
+                <!-- Highlight-end -->
             </plugin>
         </plugins>
     </build>
+
 </project>
