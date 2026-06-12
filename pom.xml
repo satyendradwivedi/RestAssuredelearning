@@ -91,26 +91,31 @@
         <plugins>
 
             <!-- Maven Compiler Plugin -->
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <release>17</release>
-                </configuration>
-            </plugin>
-
-            <!-- Surefire Plugin for TestNG -->
+                        <!-- Surefire Plugin for TestNG -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.3.0</version>
-
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/suite.xml</suiteXmlFile>
+                        <!-- Highlight-start -->
+                        <!-- Points back to the root folder where your file actually sits -->
+                        <suiteXmlFile>${suite}.xml</suiteXmlFile>
+                        <!-- Highlight-end -->
                     </suiteXmlFiles>
                 </configuration>
+                <!-- Highlight-start -->
+                <!-- Explicitly forces Maven to prioritize TestNG over your JUnit dependencies -->
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <version>3.3.0</version>
+                    </dependency>
+                </dependencies>
+                <!-- Highlight-end -->
             </plugin>
+
 
         </plugins>
     </build>
