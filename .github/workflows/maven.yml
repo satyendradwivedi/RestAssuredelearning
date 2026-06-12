@@ -27,10 +27,8 @@ jobs:
         cache: maven
 
     - name: execute tests
-      # Highlight-start
-      # Removed -X flag completely to shrink the 5,000+ lines of noise down to clean, readable output
-      run: mvn clean test -Dsuite=suite -Dmaven.test.failure.ignore=true
-      # Highlight-end
+      # We explicitly trigger test-compile first to force verification of all required file resources
+      run: mvn clean test-compile test -Dsuite=suite -Dmaven.test.failure.ignore=true
 
     - name: Upload a Build Artifact
       if: always()
@@ -43,4 +41,7 @@ jobs:
       if: always()
       uses: ScalableCapital/action-surefire-report@v2
       with:
-        report_paths: '**/target/surefire-reports/testng-results.xml'
+        # Highlight-start
+        # Targeted direct file path to bypass wildcard resolution failures
+        report_paths: 'target/surefire-reports/testng-results.xml'
+        # Highlight-end
