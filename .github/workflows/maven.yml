@@ -28,10 +28,9 @@ jobs:
 
     - name: execute tests
       # Highlight-start
-      # Uses -Dsurefire.suiteXmlFiles to bypass structural constraints and find the file anywhere
-      run: mvn clean test -Dsurefire.suiteXmlFiles=**/suite.xml -Dmaven.test.failure.ignore=true -X
+      # Matches your exact pom.xml property mapping while preventing build termination on failed assertions
+      run: mvn clean test -Dsuite=suite -Dmaven.test.failure.ignore=true -X
       # Highlight-end
-
 
     - name: Upload a Build Artifact
       if: always()
@@ -42,9 +41,6 @@ jobs:
 
     - name: Publish TestNG Report
       if: always()
-      # Highlight-start
-      # Updated to the official, actively supported v2 repository path
       uses: ScalableCapital/action-surefire-report@v2
       with:
         report_paths: '**/target/surefire-reports/testng-results.xml'
-      # Highlight-end
