@@ -28,9 +28,10 @@ jobs:
 
     - name: execute tests
       # Highlight-start
-      # Added explicitly defined system properties to guarantee Surefire outputs the XML file
-      run: mvn clean test -Dsuite=suite -Dmaven.test.failure.ignore=true -Dsurefire.reportNameSuffix=testng -X
+      # Uses -Dsurefire.suiteXmlFiles to bypass structural constraints and find the file anywhere
+      run: mvn clean test -Dsurefire.suiteXmlFiles=**/suite.xml -Dmaven.test.failure.ignore=true -X
       # Highlight-end
+
 
     - name: Upload a Build Artifact
       if: always()
