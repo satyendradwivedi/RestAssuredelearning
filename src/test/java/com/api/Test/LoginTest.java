@@ -13,7 +13,7 @@ import com.api.utils.ConfigReader;
 
 import io.restassured.response.Response;
 
-@Listeners(com.api.listeners.TestListener.class)
+//@Listeners(com.api.listeners.TestListener.class)
 public class LoginTest {
 
     private static final Logger logger = LogManager.getLogger(LoginTest.class);
