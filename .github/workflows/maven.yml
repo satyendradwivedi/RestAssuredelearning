@@ -40,8 +40,9 @@ jobs:
       with:
         name: TestNG Results
         # Highlight-start
-        # This matches testng-results.xml or any generated JUnit-style reports in target/
-        path: '**/target/surefire-reports/**/*.xml' 
+        # Searches every directory inside your workflow workspace for test xml files
+        path: '**/*.xml' 
         # Highlight-end
         reporter: java-junit
+
 
